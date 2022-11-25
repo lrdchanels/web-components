@@ -11,6 +11,14 @@ class WebComponent extends HTMLElement {
         this.attachShadow({mode: 'open'})
     }
 
+    disconnectedCallback() {
+        console.log('disconnected')
+    }
+
+    attributeChangedCallback(attributeName, oldValue, newValue) {
+        console.log({attributeName, oldValue, newValue})
+    }
+
     connectedCallback() {
 
         const social = this.getAttribute('social')
